@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# Importing our say_hello function from views.py
 from todo.views import say_hello
 
 urlpatterns = [
