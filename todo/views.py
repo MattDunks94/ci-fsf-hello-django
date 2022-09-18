@@ -4,4 +4,5 @@ from django.shortcuts import render, HttpResponse
 
 
 def say_hello(request):
+    # This will be displayed on the page.
     return HttpResponse("Hello!")
