@@ -1,0 +1,4 @@
+Must install django to run app.
+In the terminal, enter:
+
+pip3 install 'django<4'
