@@ -1,8 +1,8 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 
 
-def say_hello(request):
+def get_todo_list(request):
     # This will be displayed on the page.
-    return HttpResponse("Hello!")
+    return render(request, 'todo/todo_list.html')
