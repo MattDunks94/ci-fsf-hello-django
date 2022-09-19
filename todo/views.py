@@ -14,11 +14,14 @@ def get_todo_list(request):
 
 
 def add_item(request):
-    # Receives user data, new item, and adds it to Item class
     if request.method == "POST":
+        # Assigning variable to our ItemForm class from forms.py
         form = ItemForm(request.POST)
+        # is_valid() method runs validation, returns a boolean
+        # If it returns TRUE it saves user data
         if form.is_valid():
-            form.save
+            # save() saves the form data into Item, the model, forms.py
+            form.save()
             return redirect('get_todo_list')
 
     form = ItemForm()
