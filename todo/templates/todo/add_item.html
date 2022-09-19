@@ -15,6 +15,7 @@
         <!-- Cross-Site-Forgery-Token (Makes sure the data is coming from our todo_list, not from an unknown source) -->
         {% csrf_token %}
         <!-- Injecting our form created using Django -->
+        <!-- This form is created via our 'Item' model -->
         {{ form.as_p }}
         <div>
             <p>
