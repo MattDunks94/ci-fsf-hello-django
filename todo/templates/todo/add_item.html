@@ -14,18 +14,7 @@
     <form method="POST" action="add">
         <!-- Cross-Site-Forgery-Token (Makes sure the data is coming from our todo_list, not from an unknown source) -->
         {% csrf_token %}
-        <div>
-            <p>
-                <label for="name">Name:</label>
-                <input type="text" id="id_name" name="item_name">
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="id_done">Done:</label>
-                <input type="checkbox" id="id_done" name="done">
-            </p>
-        </div>
+        {{ form.as_p }}
         <div>
             <p>
                 <button type="submit">Add Item</button>
