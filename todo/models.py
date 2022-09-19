@@ -11,3 +11,6 @@ class Item(models.Model):
     # BooleanField(), imported from models, is either TRUE or FALSE.
     # default sets the item to not done, TRUE meaning it's done.
     done = models.BooleanField(null=False, blank=False, default=False)
+    # Overiding django string method, displaying own item name
+    def __str__(self):
+        return self.name
