@@ -10,3 +10,8 @@ def get_todo_list(request):
     }
     # This will be displayed on the browser.
     return render(request, 'todo/todo_list.html', context)
+
+
+def add_item(request):
+    # This will be displayed on the browser.
+    return render(request, 'todo/add_item.html')
