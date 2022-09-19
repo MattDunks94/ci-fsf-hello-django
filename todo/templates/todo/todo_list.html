@@ -10,10 +10,20 @@
     <h1>Things I need to do:</h1>
 
     <table>
+        <!-- Displays our Item class from models.py -->
+        <!-- Iterating through key values (name, done) within Item -->
         {% for item in items %}
         <tr>
+            {% if item.done %}
+            <td><strike>{{ item.name }}</strike></td>
+            {% else %}
             <td>{{ item.name }}</td>
-            <td>{{ item.done }}</td>
+            {% endif %}
+        </tr>
+        <!-- If there is no data, items in todo list , display message -->
+        {% empty %}
+        <tr>
+            <td>You have nothing to do.</td>
         </tr>
         {% endfor %}
     </table>
