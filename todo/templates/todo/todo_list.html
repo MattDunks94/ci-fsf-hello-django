@@ -19,6 +19,12 @@
             {% else %}
             <td>{{ item.name }}</td>
             {% endif %}
+            <td>
+                <!-- item.id collects the url button id, Django automated id -->
+                <a href="/edit/{{ item.id }}">
+                    <button>Edit</button>
+                </a>
+            </td>
         </tr>
         <!-- If there is no data, items in todo list , display message -->
         {% empty %}
