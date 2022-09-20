@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# Importing our say_hello function from views.py
-from todo.views import get_todo_list, add_item, edit_item
+# Importing our views.py file
+from todo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_todo_list, name='get_todo_list'),
-    path('add', add_item, name='add'),
-    path('edit/<item_id>', edit_item, name='edit')
+    path('', views.get_todo_list, name='get_todo_list'),
+    path('add', views.add_item, name='add'),
+    path('edit/<item_id>', views.edit_item, name='edit'),
+    path('toggle/<item_id>', views.toggle_item, name='toggle')
 ]
