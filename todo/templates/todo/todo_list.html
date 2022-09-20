@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Things I need to do:</h1>
 
@@ -21,6 +23,9 @@
             {% endif %}
             <td>
                 <!-- item.id collects the url button id, Django automated id -->
+                <a href="/toggle/{{ item.id }}">
+                    <button>Toggle</button>
+                </a>
                 <a href="/edit/{{ item.id }}">
                     <button>Edit</button>
                 </a>
@@ -34,6 +39,7 @@
         {% endfor %}
     </table>
     <a href="/add">Add an Item</a>
-    
+
 </body>
+
 </html>
