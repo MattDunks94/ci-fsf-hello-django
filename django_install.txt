@@ -1,4 +1,8 @@
-Must install django to run app.
+# Must install django to run app.
 In the terminal, enter:
 
 pip3 install 'django<4'
+
+# To run tests, enter to terminal:
+
+python3 manage.py test
