@@ -13,11 +13,16 @@ python3 manage.py test
 python3 manage.py test {folder}.{file}.{function}
 
 # Install 'coverage', this shows how much code we have tested in our project.
+# Enter to command line:
 
 pip3 install coverage
 
+# To view the 'coverage' report, type the following to the command line:
+
+coverage report
+
 # Type the following to import a html version of coverage.
-# This displays the coverage tested in html form.
+# This displays the coverage report in html form.
 # It creates its own folder containing the hmtl files.
 
 coverage html
