@@ -20,6 +20,8 @@ class TestViews(TestCase):
     # Testing the '/edit' view is equal to status code 200, successful reponse.
     def test_get_edit_item_page(self):
         item = Item.objects.create(name='Test Todo Item')
+        # client is part of the django testing framework.
+        # It acts as a 'dummy' browser.
         response = self.client.get(f'/edit/{item.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'todo/edit_item.html')
