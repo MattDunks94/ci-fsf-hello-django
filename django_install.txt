@@ -1,8 +1,14 @@
 # Must install django to run app.
-In the terminal, enter:
+# In the terminal, enter:
 
 pip3 install 'django<4'
 
 # To run tests, enter to terminal:
 
 python3 manage.py test
+
+# Can test individual files/test functions, seperated by periods.
+# In the terminal, enter:
+
+python3 manage.py test {folder}.{file}.{function}
+
