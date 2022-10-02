@@ -7,12 +7,14 @@ class TestViews(TestCase):
 
     # Testing the HTTP responses.
     def test_get_todo_list(self):
+        # Testing the path to '/', homepage.
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'todo/todo_list.html')
 
     # Testing the '/add' view is equal to status code 200, successful reponse.
     def test_get_add_item_page(self):
+        # Testing the path to /add.
         response = self.client.get('/add')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'todo/add_item.html')
@@ -22,6 +24,7 @@ class TestViews(TestCase):
         item = Item.objects.create(name='Test Todo Item')
         # client is part of the django testing framework.
         # It acts as a 'dummy' browser.
+        # This tests the path to the /edit and item id.
         response = self.client.get(f'/edit/{item.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'todo/edit_item.html')
@@ -68,4 +71,3 @@ class TestViews(TestCase):
         updated_item = Item.objects.get(id=item.id)
         # Checking if the item name is equal to the string.
         self.assertEqual(updated_item.name, 'Updated Name')
-
