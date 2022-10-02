@@ -45,4 +45,14 @@ class TestViews(TestCase):
         # Should equal 0 as we've deleted an item.
         self.assertEqual(len(existing_items), 0)
 
-    # def test_can_toggle_item(self):
+    def test_can_toggle_item(self):
+        # Create item with name and done status of True.
+        item = Item.objects.create(name='Test Todo Item', done=True)
+        # Collecting the item id from /toggle path.
+        response = self.client.get(f'/toggle/{item.id}')
+        # Redirects back to homepage.
+        self.assertRedirects(response, '/')
+        # Getting item id.
+        updated_item = Item.objects.get(id=item.id)
+        # Checking whether the done status is False from our item.
+        self.assertFalse(updated_item.done)
