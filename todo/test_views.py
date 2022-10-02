@@ -56,3 +56,16 @@ class TestViews(TestCase):
         updated_item = Item.objects.get(id=item.id)
         # Checking whether the done status is False from our item.
         self.assertFalse(updated_item.done)
+
+    def test_can_edit_item(self):
+        # Create item.
+        item = Item.objects.create(name='Test Todo Item')
+        # Testing the path from our views to /edit, giving the item a name.
+        response = self.client.post(f'/edit/{item.id}', {'name': 'Updated Name'})
+        # Testing the redirect back to homepage.
+        self.assertRedirects(response, '/')
+        # Collecting the item id.
+        updated_item = Item.objects.get(id=item.id)
+        # Checking if the item name is equal to the string.
+        self.assertEqual(updated_item.name, 'Updated Name')
+
