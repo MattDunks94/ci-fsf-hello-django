@@ -3,6 +3,10 @@
 
 pip3 install 'django<4'
 
+# Also, install dj-database-url:
+
+pip3 install dj-database-url
+
 # To run tests, enter to terminal:
 
 python3 manage.py test
